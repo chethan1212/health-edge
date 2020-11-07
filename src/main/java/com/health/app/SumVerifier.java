@@ -12,24 +12,6 @@ import java.util.Map;
  *
  */
 public class SumVerifier {
-
-	/**
-	 * Main method to invoke the static methods that verify the array.
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		
-		System.out.println("Hello world");
-		int list[] = {1,3,4,5,6,7,
-				//3,27,45,4,5,-10,7,
-				6,7,12,3,
-				15,22,34};
-		
-		System.out.println(verifySumExistInSinglePass(list, 17));
-		
-		System.out.println(verifySumExistInTwoPass(list, 17));
-	}
-
 	
 	/**
 	 * Function verify whether an array of int contains a pair of elements
@@ -82,7 +64,7 @@ public class SumVerifier {
 	}
 	
 	
-	public static boolean verifySumExistTwoPass(int[] arr,int sum ) {
+	public static boolean verifySumExistRecursion(int[] arr,int sum ) {
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr.length; j++) {
 				if(i != j && arr[i] + arr[j] == sum) {
