@@ -28,6 +28,9 @@ public class SumVerifier {
 	 * @return - true if the list contains a pair that add up to the sum
 	 */
 	public static boolean verifySumExistInSinglePass(int[] arr,int sum ) {
+		if(arr == null || arr.length<2) {
+			return false;
+		}
 		Map<Integer,Boolean> checkerMap = new HashMap<Integer,Boolean>();
 		for (int i = 0; i < arr.length; i++) {
 			if( !checkerMap.containsKey(sum - arr[i])) {
@@ -53,6 +56,9 @@ public class SumVerifier {
 	 * @return - true if the list contains a pair that add up to the sum
 	 */
 	public static boolean verifySumExistInTwoPass(int[] arr,int sum ) {
+		if(arr == null || arr.length<2) {
+			return false;
+		}
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr.length; j++) {
 				if(i != j && arr[i] + arr[j] == sum) {

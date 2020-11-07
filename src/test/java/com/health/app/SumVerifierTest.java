@@ -29,6 +29,34 @@ public class SumVerifierTest {
     }
     
     @Test
+    public void testVerifySumExistInSinglePassForNullArray()
+    {
+    	int arr[] = null;
+        assertTrue( !SumVerifier.verifySumExistInSinglePass(null, 17));
+    }
+    
+    @Test
+    public void testVerifySumExistInSinglePassForEmptyArray()
+    {
+    	int arr[] = {};
+        assertTrue( !SumVerifier.verifySumExistInSinglePass(arr, 17));
+    }
+    
+    @Test
+    public void testVerifySumExistInSinglePassForSingleElementArray()
+    {
+    	int arr[] = {17};
+        assertTrue( !SumVerifier.verifySumExistInSinglePass(arr, 17));
+    }
+    
+    @Test
+    public void testVerifySumExistInSinglePassForTwoElementArray()
+    {
+    	int arr[] = {10,7};
+        assertTrue(SumVerifier.verifySumExistInSinglePass(arr, 17));
+    }
+    
+    @Test
     public void testVerifySumExistInTwoPassForSuccess()
     {
     	int arr[] = {1,5,4,12,3,22,34};
